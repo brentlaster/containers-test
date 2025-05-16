@@ -1,8 +1,6 @@
-# Containers Fundamentals - Lab Setup
+# Containers Fundamentals - Test Setup
 
-These instructions will guide you through configuring a GitHub Codespaces environment that you can use to run the course labs. (*Doing this in Chrome if you have it may work better for copy and paste actions.*)
-
-These steps **must** be completed prior to starting the actual labs.
+These instructions will guide you through testing a GitHub Codespaces environment that you can use to run the course labs. 
 
 *(Note: If you prefer to run this in your own environment, you will need to have Docker and Kubernetes installed and configured, and have a clone of this repository. If you run in your own environment, some elements in the labs may look/be different and are not guaranteed to function the same way. For those reasons, the codespace environment is the recommended one for the class.)*
 
@@ -23,7 +21,7 @@ This will run for a while to get everything ready.
 **3. Run the following commands in the codespace's terminal (This will take several minutes to run...):**
 
 ```
-./setup.sh
+./test-setup.sh
 ```
 
 The output should look similar to the following.
@@ -53,31 +51,6 @@ You can view the list of minikube maintainers at: https://github.com/kubernetes/
     ▪ Using image docker.io/registry:2.8.3
 🔎  Verifying registry addon...
 🌟  The 'registry' addon is enabled
-```
-
-## Labs
-
-**4. After the codespace has started, open the labs document either in a separate browser/tab or in the codespace itself. To open directly in the codespace, go to the file tree on the left, find the file named *codespace-labs.md*, right-click on it, and open it with the *Preview* option.**
-
-![Labs doc preview in codespace](./images/cf03.png?raw=true "Labs doc preview in codespace")
-
-This will open it up in a tab above your terminal. Then you can follow along with the steps in the labs. 
-Any command in the gray boxes is either code intended to be run in the console or code to be updated in a file.
-
-Labs doc: [Containers Fundamentals Labs](codespace-labs.md)
-
-**5. (Optional, but recommended) Change your codespace's default timeout from 30 minutes to longer (45 minimum).**
-To do this, when logged in to GitHub, go to https://github.com/settings/codespaces and scroll down on that page until you see the *Default idle timeout* section. Adjust the value as desired.
-
-![Changing codespace idle timeout value](./images/dga56.png?raw=true "Changing codespace idle timeout value")
-
-**NOTE: If your codespace times out and you need to reopen it**
-
-1. Go to https://github.com/YOUR-GITHUB-USERID/codespaces
-2. Find the codespace in the list, right-click, and select *Open in browser*
-3. After the codespace opens up, run the script *minikube start* in the terminal. (You might need to run this more than once if restarting a codespace depending on timing.)
-```
-minikube start
 ```
 
 <br/><br/>
