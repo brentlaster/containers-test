@@ -30,4 +30,13 @@ docker build -f Dockerfile_roar_web_image --build-arg warFile=roar.war -t localh
 docker push localhost:5000/roar-db:v1
 docker push localhost:5000/roar-web:v1
 echo Images created and pushed to localhost:5000
+docker rmi localhost:5000/roar-db:v1
+docker rmi localhost:5000/roar-web:v1
+kubectl create ns roar
+kubectl apply -f /workspaces/containers-test/roar-k8s/roar-complete.yaml
+kubectl wait --for=condition=Ready -n roar pod --all --timeout=120s
+kubectl port-forward -n roar svc/roar-web 8089 &
+PORT=8089
+CODESPACE_NAME=$(jq -r ".CODESPACE_NAME" /workspaces/.codespaces/shared/environment-variables.json)
+echo "https://${CODESPACE_NAME}-${PORT}.app.github.dev/roar/"
 
