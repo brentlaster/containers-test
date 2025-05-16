@@ -51,6 +51,18 @@ You can view the list of minikube maintainers at: https://github.com/kubernetes/
     ▪ Using image docker.io/registry:2.8.3
 🔎  Verifying registry addon...
 🌟  The 'registry' addon is enabled
+
+...
+
+namespace/roar created
+deployment.apps/roar-web created
+service/roar-web created
+deployment.apps/mysql created
+service/mysql created
+pod/mysql-5ff9959854-cm9vj condition met
+pod/roar-web-5bc9df75d9-6g4mp condition met
+https://ominous-umbrella-4g9g95gj6hqp9x-8089.app.github.dev/roar/
+Forwarding from 127.0.0.1:8089 -> 8080
 ```
 
 <br/><br/>
